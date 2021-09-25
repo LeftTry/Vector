@@ -23,29 +23,29 @@ public:
 
     vector operator+(vector);
     vector operator-(vector);
-    vector operator*(vector);
+    double operator*(vector);
     vector operator/(double);
     vector operator*(double);
 };
 
-vector vector::operator+(vector) {
-    return vector();
+vector vector::operator+(vector a) {
+    return vector(x + a.x, y + a.y);
 }
 
-vector vector::operator-(vector) {
-    return vector();
+vector vector::operator-(vector a) {
+    return vector(x - a.x, y - a.y);
 }
 
-vector vector::operator*(vector) {
-    return vector();
+double vector::operator*(vector a) {
+    return a.x * x + a.y * y;
 }
 
-vector vector::operator/(double) {
-    return vector();
+vector vector::operator/(double k) {
+    return vector(x / k, y / k);
 }
 
-vector vector::operator*(double) {
-    return vector();
+vector vector::operator*(double k) {
+    return vector(k * x, k * y);
 }
 
 int main() {
