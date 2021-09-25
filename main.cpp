@@ -1,5 +1,7 @@
 #include <iostream>
-#include <math.h>
+#include <cmath>
+
+#define PI 3.14159265
 
 using namespace std;
 
@@ -35,6 +37,8 @@ public:
     double operator%(vector) const;
 
     double len() const;
+
+    double angle(vector) const;
 };
 
 vector vector::operator+(vector a) const {
@@ -63,6 +67,13 @@ double vector::operator%(vector a) const {
 
 double vector::len() const {
     return sqrt(x * x + y * y);
+}
+
+double vector::angle(vector a) const {
+    double lb = this->len();
+    double la = a.len();
+    double sab = a * *this;
+    return acos(sab / (lb * la)) * 180 / PI;
 }
 
 int main() {
