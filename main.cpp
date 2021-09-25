@@ -20,7 +20,33 @@ public:
 
     void set_x(double _x) { x = _x; }
     void set_y(double _y) { y = _y; }
+
+    vector operator+(vector);
+    vector operator-(vector);
+    vector operator*(vector);
+    vector operator/(double);
+    vector operator*(double);
 };
+
+vector vector::operator+(vector) {
+    return vector();
+}
+
+vector vector::operator-(vector) {
+    return vector();
+}
+
+vector vector::operator*(vector) {
+    return vector();
+}
+
+vector vector::operator/(double) {
+    return vector();
+}
+
+vector vector::operator*(double) {
+    return vector();
+}
 
 int main() {
 
