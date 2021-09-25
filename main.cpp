@@ -22,10 +22,16 @@ public:
     void set_y(double _y) { y = _y; }
 
     vector operator+(vector);
+
     vector operator-(vector);
+
     double operator*(vector);
+
     vector operator/(double);
+
     vector operator*(double);
+
+    double operator%(vector);
 };
 
 vector vector::operator+(vector a) {
@@ -46,6 +52,10 @@ vector vector::operator/(double k) {
 
 vector vector::operator*(double k) {
     return vector(k * x, k * y);
+}
+
+double vector::operator%(vector a) {
+    return x * a.y - y * a.x;
 }
 
 int main() {
