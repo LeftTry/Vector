@@ -39,6 +39,10 @@ public:
     double len() const;
 
     double angle(vector) const;
+
+    bool operator==(vector) const;
+
+    bool operator!=(vector) const;
 };
 
 vector vector::operator+(vector a) const {
@@ -74,6 +78,16 @@ double vector::angle(vector a) const {
     double la = a.len();
     double sab = a * *this;
     return acos(sab / (lb * la)) * 180 / PI;
+}
+
+bool vector::operator==(vector a) const {
+    if(x == a.x && y == a.y) return true;
+    return false;
+}
+
+bool vector::operator!=(vector a) const {
+    if(x != a.x && y != a.y) return true;
+    return false;
 }
 
 int main() {
