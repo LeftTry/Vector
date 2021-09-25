@@ -43,6 +43,8 @@ public:
     bool operator==(vector) const;
 
     bool operator!=(vector) const;
+
+    friend ostream& operator<<(ostream&, const vector&);
 };
 
 vector vector::operator+(vector a) const {
@@ -88,6 +90,10 @@ bool vector::operator==(vector a) const {
 bool vector::operator!=(vector a) const {
     if(x != a.x && y != a.y) return true;
     return false;
+}
+
+ostream& operator<<(ostream &out, const vector &a) {
+    return out << "{" << a.x << ";" << a.y << "}";
 }
 
 int main() {
